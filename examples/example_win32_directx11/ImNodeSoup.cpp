@@ -9,12 +9,12 @@
 #include <cassert>
 
 
-#define IMGUI_DEFINE_MATH_OPERATORS
-
 #include "imgui.h"
+
+#define IMGUI_DEFINE_MATH_OPERATORS
 #include "imgui_internal.h"
 
-#include <nodesoup.hpp>
+#include "nodesoup.hpp"
 #include "fruchterman_reingold.hpp"
 #include "kamada_kawai.hpp"
 

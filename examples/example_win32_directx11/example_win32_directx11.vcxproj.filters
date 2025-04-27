@@ -24,6 +24,9 @@
     <ClInclude Include="..\..\backends\imgui_impl_dx11.h">
       <Filter>sources</Filter>
     </ClInclude>
+    <ClInclude Include="nodesoup.hpp" />
+    <ClInclude Include="fruchterman_reingold.hpp" />
+    <ClInclude Include="kamada_kawai.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\imgui.cpp">
@@ -50,6 +53,10 @@
     <ClCompile Include="..\..\imgui_tables.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
+    <ClCompile Include="ImNodeSoup.cpp" />
+    <ClCompile Include="nodesoup.cpp" />
+    <ClCompile Include="fruchterman_reingold.cpp" />
+    <ClCompile Include="kamada_kawai.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.txt" />
