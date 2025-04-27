@@ -11,6 +11,8 @@ IMGUI_DIR = ../..
 SOURCES = main.mm
 SOURCES += $(IMGUI_DIR)/imgui.cpp $(IMGUI_DIR)/imgui_demo.cpp $(IMGUI_DIR)/imgui_draw.cpp $(IMGUI_DIR)/imgui_tables.cpp $(IMGUI_DIR)/imgui_widgets.cpp
 SOURCES += $(IMGUI_DIR)/backends/imgui_impl_glfw.cpp $(IMGUI_DIR)/backends/imgui_impl_metal.mm
+SOURCES += ./nodesoup.cpp ./fruchterman_reingold.cpp kamada_kawai.cpp ImNodeSoup.cpp
+
 OBJS = $(addsuffix .o, $(basename $(notdir $(SOURCES))))
 
 LIBS = -framework Metal -framework MetalKit -framework Cocoa -framework IOKit -framework CoreVideo -framework QuartzCore
