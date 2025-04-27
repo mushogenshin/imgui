@@ -153,6 +153,9 @@
     <ClInclude Include="..\..\imgui_internal.h" />
     <ClInclude Include="..\..\backends\imgui_impl_dx11.h" />
     <ClInclude Include="..\..\backends\imgui_impl_win32.h" />
+    <ClInclude Include="nodesoup.hpp" />
+    <ClInclude Include="fruchterman_reingold.hpp" />
+    <ClInclude Include="kamada_kawai.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\imgui.cpp" />
@@ -163,6 +166,10 @@
     <ClCompile Include="..\..\backends\imgui_impl_dx11.cpp" />
     <ClCompile Include="..\..\backends\imgui_impl_win32.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ImNodeSoup.cpp" />
+    <ClCompile Include="nodesoup.cpp" />
+    <ClCompile Include="fruchterman_reingold.cpp" />
+    <ClCompile Include="kamada_kawai.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\misc\debuggers\imgui.natstepfilter" />
