@@ -5,66 +5,58 @@
 namespace nodesoup
 {
 
+    class FruchtermanReingold
+    {
+    public:
+        FruchtermanReingold(const adj_list_t &aAdjList, double aK = 15.0);
 
-class FruchtermanReingold
-{
-public:
-  FruchtermanReingold(const adj_list_t& aAdjList,double aK=15.0);
+        void Start(bool aStartCircle = true);
+        void Step(int aStepSize, int aMaxStep, std::vector<NsPosition> &aPositions);
 
-  void Start(bool aStartCircle=true);
-  void Step(int aStepSize,int aMaxStep,std::vector<NsPosition>& aPositions);
+        int GetCurrIter() const noexcept;
+        int GetMaxIters() const noexcept;
 
-  int GetCurrIter() const noexcept;
-  int GetMaxIters() const noexcept;
+        double GetK() const noexcept;
+        void SetK(double aK) noexcept;
 
-  double GetK() const noexcept;
-  void   SetK(double aK) noexcept;
+        double GetEnergy() const noexcept;
 
-  double GetEnergy() const noexcept;
+        void MovePos(vertex_id_t aVertexId, const ImVec2 &aDisp, bool aRecalculate);
 
-  void   MovePos(vertex_id_t aVertexId,const ImVec2& aDisp,bool aRecalculate);
+    private:
+        const adj_list_t &m_AdjList;
+        double m_K;
+        double m_KSquared;
+        double m_Temp;
+        std::vector<ImVec2> m_Mvmts;
 
-private:
+        bool m_StartCircle;
+        int m_CurrIter, m_MaxIter;
 
-  const adj_list_t& m_AdjList;
-  double m_K;
-  double m_KSquared;
-  double m_Temp;
-  std::vector<ImVec2> m_Mvmts;
+        std::vector<NsPosition> m_Positions;
 
-  bool m_StartCircle;
-  int m_CurrIter,m_MaxIter;
+        void DoStep();
+        void SetInitPositions();
+    };
 
-  std::vector<NsPosition> m_Positions;
+    inline int FruchtermanReingold::GetCurrIter() const noexcept
+    {
+        return m_CurrIter;
+    }
 
-  void DoStep();
-  void SetInitPositions();
-};
+    inline int FruchtermanReingold::GetMaxIters() const noexcept
+    {
+        return m_MaxIter;
+    }
 
+    inline double FruchtermanReingold::GetK() const noexcept
+    {
+        return m_K;
+    }
 
-
-
-inline int FruchtermanReingold::GetCurrIter() const noexcept
-{
-  return m_CurrIter;
-}
-
-inline int FruchtermanReingold::GetMaxIters() const noexcept
-{
-  return m_MaxIter;
-}
-
-inline double FruchtermanReingold::GetK() const noexcept
-{
-  return m_K;
-}
-
-inline double FruchtermanReingold::GetEnergy() const noexcept
-{
-  return m_Temp;
-}
-
-
-
+    inline double FruchtermanReingold::GetEnergy() const noexcept
+    {
+        return m_Temp;
+    }
 
 }
